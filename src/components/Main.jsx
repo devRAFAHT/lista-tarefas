@@ -1,5 +1,9 @@
 import { Component } from "react";
 import './Main.css'
+
+//Form
+import { FaPlus } from 'react-icons/fa';
+
 export default class Vain extends Component{
   state = {
     novaTarefa: '',
@@ -12,13 +16,16 @@ export default class Vain extends Component{
   }
 
   render() {
+    const { novaTarefa } = this.state;
     return (
       <div className="main">
         <h1>Lista de Tarefas</h1>
 
-        <form action="#">
-          <input onChange={this.inputMudou} type="text" />
-          <button type="submit">Enviar</button>
+        <form action="#" className="form">
+          <input onChange={this.inputMudou} type="text" value={novaTarefa}/>
+          <button type="submit">
+            <FaPlus />
+          </button>
         </form>
       </div>
     );
